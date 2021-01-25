@@ -8,7 +8,8 @@ the result should be the digits of the number.
 
 
 def convert(number):
-    res = "".join(["Pling", "Plang", "Plong"][i] for i in range(3) if number % [3, 5, 7][i] == 0)
+    conversion_table = {3: "Pling", 5: "Plang", 7: "Plong"}
+    res = "".join([value for key, value in conversion_table.items() if number % key == 0])
     return res if res else str(number)
 
 
